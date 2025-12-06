@@ -1,4 +1,4 @@
-LLM_MODEL = 'gemini-2.0-flash-lite'
+LLM_MODEL = 'gemini-2.0-flash'
 
 EMBEDDING_MODEL = "models/text-embedding-004"
 
