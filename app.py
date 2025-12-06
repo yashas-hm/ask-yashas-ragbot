@@ -1,4 +1,8 @@
 import os
+import sys
+
+# Add project root to path for Vercel
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Load .env file only in local development (not on Vercel)
 if os.path.exists('.env'):
