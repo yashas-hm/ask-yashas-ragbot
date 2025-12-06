@@ -1,8 +1,11 @@
 # AskYashas – Serverless RAG Chatbot
 
-A personalized **Retrieval-Augmented Generation (RAG)** chatbot designed to answer questions about me (Yashas Majmudar) with precision and context-awareness. It combines Google Gemini with Upstash Vector for semantic search, enabling grounded, factual, and context-rich responses.
+A personalized **Retrieval-Augmented Generation (RAG)** chatbot designed to answer questions about me (Yashas Majmudar)
+with precision and context-awareness. It combines Google Gemini with Upstash Vector for semantic search, enabling
+grounded, factual, and context-rich responses.
 
-**Note:** You can use this repository as a template to create your own RAG ChatBot. Just make a few changes – [follow these steps](#use-this-repo-as-template).
+**Note:** You can use this repository as a template to create your own RAG ChatBot. Just make a few
+changes – [follow these steps](#use-this-repo-as-template).
 
 ---
 
@@ -20,14 +23,14 @@ A personalized **Retrieval-Augmented Generation (RAG)** chatbot designed to answ
 
 ## Tech Stack
 
-| Layer            | Tech                          |
-|------------------|-------------------------------|
-| **Backend**      | FastAPI                       |
-| **LLM**          | Google Gemini 2.0 Flash       |
-| **Embeddings**   | Google text-embedding-004     |
-| **Vector Store** | Upstash Vector (hosted)       |
-| **CI/CD**        | GitHub Actions                |
-| **Deployment**   | Vercel Serverless             |
+| Layer            | Tech                         |
+|------------------|------------------------------|
+| **Backend**      | FastAPI                      |
+| **LLM**          | Google Gemini 2.0 Flash Lite |
+| **Embeddings**   | Google text-embedding-004    |
+| **Vector Store** | Upstash Vector (hosted)      |
+| **CI/CD**        | GitHub Actions               |
+| **Deployment**   | Vercel Serverless            |
 
 ---
 
@@ -79,12 +82,12 @@ ask-yashas-llm/
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `API_TOKEN` | Google Gemini API key |
-| `UPSTASH_VECTOR_REST_URL` | Upstash Vector index URL |
-| `UPSTASH_VECTOR_REST_TOKEN` | Upstash Vector access token |
-| `BYPASS_KEY` | (Optional) Secret key to bypass origin checks |
+| Variable                    | Description                                   |
+|-----------------------------|-----------------------------------------------|
+| `API_TOKEN`                 | Google Gemini API key                         |
+| `UPSTASH_VECTOR_REST_URL`   | Upstash Vector index URL                      |
+| `UPSTASH_VECTOR_REST_TOKEN` | Upstash Vector access token                   |
+| `BYPASS_KEY`                | (Optional) Secret key to bypass origin checks |
 
 ---
 
@@ -95,17 +98,25 @@ ask-yashas-llm/
 Send a question and get a response.
 
 **Request:**
+
 ```json
 {
   "query": "What are Yashas's skills?",
   "history": [
-    {"role": "HUMAN", "message": "Hello"},
-    {"role": "AI", "message": "Hi! How can I help you?"}
+    {
+      "role": "HUMAN",
+      "message": "Hello"
+    },
+    {
+      "role": "AI",
+      "message": "Hi! How can I help you?"
+    }
   ]
 }
 ```
 
 **Response:**
+
 ```json
 {
   "response": "**Yashas Majmudar** has expertise in:\n\n- **Mobile**: Flutter, Android, iOS\n- **Backend**: FastAPI, Node.js\n- **AI/ML**: Python, LangChain, LLMs"
@@ -128,8 +139,8 @@ Redirects to https://yashashm.dev/chat
 
 1. Create account at [console.upstash.com](https://console.upstash.com)
 2. Create a Vector index:
-   - **Dimensions**: 768
-   - **Distance Metric**: Cosine
+    - **Dimensions**: 768
+    - **Distance Metric**: Cosine
 3. Copy `UPSTASH_VECTOR_REST_URL` and `UPSTASH_VECTOR_REST_TOKEN`
 
 ### 2. Get Google Gemini API Key
@@ -141,6 +152,7 @@ Redirects to https://yashashm.dev/chat
 ### 3. Update Your Data
 
 Edit `rag_data.json` with your information:
+
 ```json
 {
   "about": {
@@ -148,15 +160,19 @@ Edit `rag_data.json` with your information:
     "title": "Your Title",
     "summary": "Your bio..."
   },
-  "skills": { ... },
-  "experience": [ ... ],
-  "projects": [ ... ]
+  "skills": {
+  },
+  "experience": [
+  ],
+  "projects": [
+  ]
 }
 ```
 
 ### 4. Set Environment Variables
 
 Create `.env` file:
+
 ```bash
 API_TOKEN=your-gemini-api-key
 UPSTASH_VECTOR_REST_URL=your-upstash-url
@@ -197,6 +213,7 @@ Add environment variables in Vercel dashboard.
 ### 9. Update Security
 
 Edit `api/utils/middleware.py` to add your allowed origins:
+
 ```python
 allowed_origin = [
     "https://yourdomain.com",
@@ -209,11 +226,13 @@ allowed_origin = [
 ## CI/CD
 
 The GitHub Action (`.github/workflows/data_change_action.yml`) automatically:
+
 1. Triggers when `rag_data.json` is modified
 2. Regenerates embeddings via Google API
 3. Uploads new vectors to Upstash
 
 Add these secrets to your GitHub repo:
+
 - `API_TOKEN`
 - `UPSTASH_VECTOR_REST_URL`
 - `UPSTASH_VECTOR_REST_TOKEN`
