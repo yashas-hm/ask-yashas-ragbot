@@ -147,4 +147,10 @@ cython_debug/
 .pypirc
 
 # Credits: https://github.com/github/gitignore
+
+#########################################
+#       Project Specific Ignores        #
+#########################################
+
 vectorstore/
+.vercel
