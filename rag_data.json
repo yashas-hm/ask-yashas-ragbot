@@ -277,7 +277,7 @@
       "link": "https://pub.dev/packages/lava_lamp_effect"
     }
   ],
-  "volunteering": [
+  "leadership_and_community": [
     {
       "role": "Coding Mentor",
       "organization": "Code The Dream",
@@ -378,33 +378,6 @@
       "title": "AI on the Edge: On-Device Machine Learning with Flutter & TensorFlow Lite",
       "organizer": "GDG Chapel Hill",
       "link": "https://github.com/yashas-hm/talks/tree/main/ai_on_edge"
-    }
-  ],
-  "open_source_contributions": [
-    {
-      "repository": "serverpod/serverpod",
-      "contributions": 4,
-      "issues": ["Add listener to shutdown process", "Improve PasswordHashValidator", "Consolidate Email Account Request exceptions", "Password length validation missing on email authentication password reset/change"]
-    },
-    {
-      "repository": "foss42/apidash",
-      "contributions": 7,
-      "issues": ["Adding Tabs at the top of the request pane", "Add a search/filter for collection pane", "Select and delete in groups", "Make Cancel-able HTTP Requests", "UI update for API Dash Website"]
-    },
-    {
-      "repository": "wger-project/flutter",
-      "contributions": 5,
-      "issues": ["Replace SharedPreferences with SharedPreferencesAsync", "Replace golden_toolkit package", "Exercise filters not opening"]
-    },
-    {
-      "repository": "VeryGoodOpenSource/very_good_templates",
-      "contributions": 2,
-      "issues": ["feat: add platform flags to the template", "feat: Add linux platform support to flame game template"]
-    },
-    {
-      "repository": "supabase/cli",
-      "contributions": 1,
-      "issues": ["Deno Config Support for IntelliJ IDEA/ Android Studio in supabase init"]
     }
   ],
   "testimonials": [
