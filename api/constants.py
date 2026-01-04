@@ -1,4 +1,4 @@
-LLM_MODEL_FALLBACK = 'gemma-3-27b'
+LLM_MODEL_FALLBACK = 'gemma-3-27b-it'
 
 LLM_MODEL = 'gemini-2.5-flash-lite'
 
